@@ -1,0 +1,45 @@
+****gmapping.yaml
+base_frame: "base_footprint" #底盘的框架
+odom_frame: "odom_combined"  #里程计的框架，这是融合陀螺仪的里程计框架
+map_update_interval: 0.01 #地图更新的一个间隔
+maxUrange: 8.0 #获取激光数据的距离范围
+maxRange: 10.0 #获取激光数据的距离范围
+sigma: 0.05 #匹配使用的sigma
+kernelSize: 3 #最多使用内核数
+lstep: 0.05 #优化机器人移动的初始值（距离）
+astep: 0.05 #优化optimize机器人移动的初始值（角度）
+iterations: 5 #扫描匹配器的迭代次数
+lsigma: 0.075 #用于计算的波束可能性的sigma
+ogain: 3.0 #在评估可能性时使用的增益，用于平滑重采样效果
+lskip: 0 #为0,表示所有的激光都处理
+minimumScore: 30 #判断scanmatch是否成功的阈值
+srr: 0.01 #运动模型的噪声参数
+srt: 0.02 #运动模型的噪声参数
+str: 0.01 #运动模型的噪声参数
+stt: 0.02 #运动模型的噪声参数
+linearUpdate: 0.05 #机器人移动linearUpdate距离，进行scanmatch
+angularUpdate: 0.0436 #机器人选装angularUpdate角度，进行scanmatch
+temporalUpdate: -1.0 #如果上次扫描处理的时间早于更新时间（秒），则处理扫描。小于零的值将关闭基于时间的更新
+resampleThreshold: 0.5 #基于Neff的重采样阈值
+particles: 50 #粒子个数,用于粒子滤波算法
+xmin: -1.0 #map初始化的大小
+ymin: -1.0
+xmax: 1.0
+ymax: 1.0
+
+delta: 0.05 #地图的分辨率
+llsamplerange: 0.01 #可能性的平移采样范围
+llsamplestep: 0.01 #可能性的平移采样步骤
+lasamplerange: 0.005 #角度采样范围的可能性
+lasamplestep: 0.005 #角度采样步骤的可能性
+
+
+
+
+
+
+
+
+
+
+

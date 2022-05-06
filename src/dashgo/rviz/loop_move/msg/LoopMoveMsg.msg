@@ -1,0 +1,2 @@
+geometry_msgs/PoseStamped pose1
+geometry_msgs/PoseStamped pose2

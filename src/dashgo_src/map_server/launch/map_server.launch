@@ -1,0 +1,6 @@
+<launch>
+  <arg name="map_file" default="$(find dashgo_nav)/maps/eai_map.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+  <rosparam file="$(arg map_file)" command="load" ns="map" />
+  </node>
+</launch>

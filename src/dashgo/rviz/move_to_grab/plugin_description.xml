@@ -1,0 +1,9 @@
+<library path="lib/libmove_to_grab">    
+  <class name="move_to_grab"    
+         type="move_to_grab::MoveToGrab"   
+         base_class_type="rviz::Panel">    
+    <description>  
+      A panel widget allowing simple diff-drive style robot base control.
+    </description>
+  </class>
+</library>
