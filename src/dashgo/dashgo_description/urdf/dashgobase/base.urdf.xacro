@@ -3,9 +3,9 @@
 <robot name="base" xmlns:xacro="http://ros.org/wiki/xacro">
 
   <!-- Define a number of dimensions using properties -->
-  <xacro:property name="base_x" value="0.40" />
-  <xacro:property name="base_y" value="0.40" />
-  <xacro:property name="base_length" value="0.20" />
+  <xacro:property name="base_x" value="0.46" />
+  <xacro:property name="base_y" value="0.45" /> 
+  <xacro:property name="base_length" value="0.13" />
   <xacro:property name="wheel_length" value="0.046" />
   <xacro:property name="wheel_radius" value="0.062" />
   <xacro:property name="wheel_offset_x" value="-0.08" />
@@ -89,12 +89,12 @@
   </link>
   
   <joint name="base_joint" type="fixed">
-<!--
-    <origin xyz="0 0 0.04" rpy="0 0 0" />     
--->  
-    <origin xyz="0.0 0 ${base_length/2 - wheel_offset_z}" rpy="0 0 0" />      
-    <parent link="base_footprint"/>
-    <child link="base_link" />
+    <!--
+        <origin xyz="0 0 0.04" rpy="0 0 0" />     
+    -->  
+        <origin xyz="-0.175  0 ${base_length/2 - wheel_offset_z}" rpy="0 0 0" />      
+        <parent link="base_footprint"/>
+        <child link="base_link" />
   </joint>
 
    <!-- Add the drive wheels -->

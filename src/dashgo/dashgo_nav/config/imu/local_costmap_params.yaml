@@ -12,10 +12,10 @@ local_costmap:
    transform_tolerance: 1.0
    map_type: costmap
 
-  #  #膨胀半径，扩展在碰撞区域以外的代价区域，使得机器人规划路径避开障碍物，local可以设置的比global小
-  #  inflation_radius: 0.07
-  #  #代价比例系数，越大则代价值越小
-  #  cost_scaling_factor: 5.0 # default 5.0
+   #膨胀半径，扩展在碰撞区域以外的代价区域，使得机器人规划路径避开障碍物，local可以设置的比global小
+   inflation_radius: 0.07
+   #代价比例系数，越大则代价值越小
+   cost_scaling_factor: 5.0 # default 5.0
 
    plugins:
      - {name: static_layer,        type: "costmap_2d::StaticLayer"}

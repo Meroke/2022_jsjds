@@ -3,7 +3,7 @@
     <arg name="urdf_file" default="$(find xacro)/xacro '--inorder' '$(find dashgo_description)/urdf/dashgobase/dashgobase.xacro'" />
 
     <param name="robot_description" command="$(arg urdf_file)" />
-    
+    <!-- <node pkg="tf" type="static_transform_publisher" name="base_footprint_to_ba+q -->
     <!-- Publish the robot state -->
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
     	<param name="publish_frequency" value="20.0"/>

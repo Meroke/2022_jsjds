@@ -3,7 +3,7 @@
   <node name="smart_driver" pkg="smart_node" type="smart_node" output="screen" respawn="true">
     <rosparam file="$(find smart_node)/config/smart_parms_imu.yaml" command="load" />
   </node>
-  <node pkg="tf" type="static_transform_publisher" name="imu_broadcaster" args="0 0 0 0 0 0 base_footprint imu_base 100" respawn="true" />
+  <node pkg="tf" type="static_transform_publisher" name="imu_broadcaster" args="-0.175 0 0.103 0 0 0 base_footprint imu_base 100" respawn="true" />
   
   <node pkg="robot_pose_ekf" type="robot_pose_ekf" name="robot_pose_ekf">
     <param name="output_frame" value="odom_combined"/>

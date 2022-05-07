@@ -1,0 +1,16 @@
+digraph G {
+"base_link" -> "base_l_wheel_link"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 13.06\nBuffer length: 4.9\nMost recent transform: 1651831594.53\nOldest transform: 1651831589.63\n"];
+"base_footprint" -> "sonar0"[label=" Broadcaster: /base_link_to_sonar0\nAverage rate: 25.106\nBuffer length: 4.899\nMost recent transform: 1651831594.58\nOldest transform: 1651831589.68\n"];
+"base_link" -> "front_flag"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"base_link" -> "base_r_wheel_link"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 13.06\nBuffer length: 4.9\nMost recent transform: 1651831594.53\nOldest transform: 1651831589.63\n"];
+"base_footprint" -> "base_link"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"base_footprint" -> "laser_frame"[label=" Broadcaster: /base_link_to_laser4\nAverage rate: 25.111\nBuffer length: 4.898\nMost recent transform: 1651831594.58\nOldest transform: 1651831589.68\n"];
+"base_footprint" -> "imu_base"[label=" Broadcaster: /imu_broadcaster\nAverage rate: 10.195\nBuffer length: 4.806\nMost recent transform: 1651831594.57\nOldest transform: 1651831589.76\n"];
+"base_footprint" -> "sonar1"[label=" Broadcaster: /base_link_to_sonar1\nAverage rate: 25.104\nBuffer length: 4.9\nMost recent transform: 1651831594.58\nOldest transform: 1651831589.68\n"];
+"map" -> "odom_combined"[label=" Broadcaster: /slam_gmapping\nAverage rate: 20.204\nBuffer length: 4.9\nMost recent transform: 1651831594.57\nOldest transform: 1651831589.67\n"];
+"odom_combined" -> "base_footprint"[label=" Broadcaster: /robot_pose_ekf\nAverage rate: 10.204\nBuffer length: 4.9\nMost recent transform: 1651831594.48\nOldest transform: 1651831589.58\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1651831594.58"[ shape=plaintext ] ;
+}->"map";
+}
