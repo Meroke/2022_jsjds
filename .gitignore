@@ -2,4 +2,4 @@ build/
 devel/
 src/dashgo/dashgo_nav/maps/*
 .vscode/*
-.catkin_workspace/*
+.catkin_workspace
