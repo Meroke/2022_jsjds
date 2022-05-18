@@ -1,5 +1,5 @@
 build/
 devel/
 src/dashgo/dashgo_nav/maps/*
-*/.vscode/*
-
+.vscode/*
+.catkin_workspace/*
