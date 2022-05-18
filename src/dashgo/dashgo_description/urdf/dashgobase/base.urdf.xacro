@@ -92,7 +92,7 @@
     <!--
         <origin xyz="0 0 0.04" rpy="0 0 0" />     
     -->  
-        <origin xyz="-0.175  0 ${base_length/2 - wheel_offset_z}" rpy="0 0 0" />      
+        <origin xyz="-0.17  0 ${base_length/2 - wheel_offset_z}" rpy="0 0 0" />      
         <parent link="base_footprint"/>
         <child link="base_link" />
   </joint>
