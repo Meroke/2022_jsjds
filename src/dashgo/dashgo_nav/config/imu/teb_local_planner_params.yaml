@@ -16,9 +16,9 @@ TebLocalPlannerROS:
 
  # Robot
 
- max_vel_x: 0.45 # 0.4
+ max_vel_x: 0.20 # 0.38
  max_vel_x_backwards: 0.15
- max_vel_theta: 0.45 # 0.38
+ max_vel_theta: 0.22 # 0.40
  acc_lim_x: 0.30
  acc_lim_theta: 0.5
  min_turning_radius: 0.0
@@ -31,12 +31,12 @@ TebLocalPlannerROS:
  decel_width: 0.1
  
  xy_goal_tolerance: 0.05
- yaw_goal_tolerance: 0.1
+ yaw_goal_tolerance: 0.08
  free_goal_vel: False
 
  # Obstacles
 
- min_obstacle_dist: 0.31
+ min_obstacle_dist: 0.07
  include_costmap_obstacles: True
  costmap_obstacles_behind_robot_dist: 1.0
  obstacle_poses_affected: 7  #  如果轨迹在靠近障碍物时不够平滑，则再次增加该值。
