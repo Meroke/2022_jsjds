@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="single_scan" type="single_scan" name="single_scan" />
+</launch>
