@@ -3,24 +3,30 @@ TebLocalPlannerROS:
  odom_topic: odom
  map_frame: /odom_combined
 
- # Trajectory
 
+# 新调整：
+# speed ++ 
+# penalty_epsilon ++  
+# obstacle_poses_affected ++
+# power 76~77
+
+ # Trajectory
  teb_autosize: True
  dt_ref: 0.7 # 0.7 小值导致精细分辨率
  dt_hysteresis: 0.1
  global_plan_overwrite_orientation: True
- max_global_plan_lookahead_dist: 0.5   #1.0   限制到虚拟目标的距离（沿着全局规划）并且因此限制经受优化的姿势的数量（姿势之间的时间距离约为dt_ref秒）
+ max_global_plan_lookahead_dist: 0.50   #1.0   限制到虚拟目标的距离（沿着全局规划）并且因此限制经受优化的姿势的数量（姿势之间的时间距离约为dt_ref秒）
  force_reinit_new_goal_dist: 1.0
  feasibility_check_no_poses: 5
  exact_arc_length: true
 
  # Robot
 
- max_vel_x: 0.40 # 0.38
- max_vel_x_backwards: 0.15
- max_vel_theta: 0.4 # 0.40
- acc_lim_x: 0.3
- acc_lim_theta: 0.5
+ max_vel_x: 0.5 # 0.38
+ max_vel_x_backwards: 0.25  # 降低，减少向后碰撞的概率
+ max_vel_theta: 0.5 # 0.40
+ acc_lim_x: 0.25
+ acc_lim_theta: 0.25
  min_turning_radius: 0.0
  footprint_model:
 #    radius: 0.30
@@ -28,18 +34,18 @@ TebLocalPlannerROS:
 #   vertices: [[-0.303, -0.225], [-0.303, 0.225],[0.098, 0.225], [0.098, -0.225]]
   vertices: [[-0.35, -0.225], [-0.35, 0.225],[0.06, 0.225], [0.06, -0.225]]
  # GoalTolerance
- decel_width: 0.46
+ decel_width: 0.50
  
- xy_goal_tolerance: 0.03
+ xy_goal_tolerance: 0.05
  yaw_goal_tolerance: 0.05
  free_goal_vel: False
 
  # Obstacles
 
- min_obstacle_dist: 0.07
+ min_obstacle_dist: 0.08
  include_costmap_obstacles: True
  costmap_obstacles_behind_robot_dist: 1.0
- obstacle_poses_affected: 7  #  如果轨迹在靠近障碍物时不够平滑，则再次增加该值。
+ obstacle_poses_affected: 8  #  如果轨迹在靠近障碍物时不够平滑，则再次增加该值。
  costmap_converter_plugin: ""
  costmap_converter_spin_thread: True
  costmap_converter_rate: 5
@@ -50,13 +56,13 @@ TebLocalPlannerROS:
  no_outer_iterations: 4
  optimization_activate: True
  optimization_verbose: False
- penalty_epsilon: 0.1
+ penalty_epsilon: 0.35
  weight_max_vel_x: 1
  weight_max_vel_theta: 1
  weight_acc_lim_x: 1  # 将权重设置为0.0来忽略加速度限制。 通过这样做，可以降低优化的复杂性并因此减少计算时间
  weight_acc_lim_theta: 1
  weight_kinematics_nh: 1000
- weight_kinematics_forward_drive: 100
+ weight_kinematics_forward_drive: 150
  weight_kinematics_turning_radius: 1
  weight_optimaltime: 1
  weight_obstacle: 50
@@ -76,3 +82,8 @@ TebLocalPlannerROS:
  obstacle_keypoint_offset: 0.1
  obstacle_heading_threshold: 0.45
  visualize_hc_graph: False
+
+ weight_viapoint: true
+ weight_inflation: 0.1
+ weight_adapt_factor: 2
+ inflation_dist: 0.15

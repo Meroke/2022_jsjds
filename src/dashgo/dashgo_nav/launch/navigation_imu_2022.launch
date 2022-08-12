@@ -1,9 +1,9 @@
 <launch>
     <include file="$(find smart_node)/launch/driver_imu.launch"/>
     <include file="$(find ydlidar)/launch/ydlidar1_up.launch"/>
-    <!--include file="$(find ydlidar)/launch/ydlidar2_down.launch"/-->
+
+    <!-- <include file="$(find rplidar_ros)/launch/rplidar.launch" /> -->
     <include file="$(find single_scan)/launch/publish_single_scan.launch"/>
-    
     <include file="$(find dashgo_description)/launch/dashgo_description.launch"/>
     <arg name="map_file" default="$(find dashgo_nav)/2022_map/starand_graph.yaml"/>
     <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
@@ -29,7 +29,7 @@
         <remap from="scan_filtered" to="scan_filtered_2" />
     </node>
     
-    <node name="multiGoals" pkg="dashgo_tools" type="multiGoals.py" respawn="true" />
-    <node name="scan_cloud" pkg="dashgo_tools" type="get_scan_data" respawn="true" />
+    <!-- <node name="multiGoals" pkg="dashgo_tools" type="multiGoals.py" respawn="true" /> -->
+    <!-- <node name="scan_cloud" pkg="dashgo_tools" type="get_scan_data" respawn="true" /> -->
   </launch>
   
